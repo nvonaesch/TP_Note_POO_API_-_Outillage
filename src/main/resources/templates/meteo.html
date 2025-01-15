@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Météo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/david.ico">
+    <link rel="icon" type="image/png" href="/david.png">
+    <link rel="stylesheet" href="meteo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4E9E43;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-weight: bold;" href="/greeting">Goodenough Meteo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/adresse">Ajouter une adresse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/greeting?nameGET=ENSIM">Bienvenue</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/adresses#">Adresses</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div th:unless="${error}" class="container mt-4">
+        <h1>Résultat de la météo</h1>
+        <p>Adresse Trouvée : <span th:text="${address}"></span></p>
+        <p>Cordonnées GPS : 
+            <span th:text="${latitude}"></span>
+            <span th:text="${longitude}"></span>
+        </p>
+    </div>
+    <div class="previsions">
+        <span>
+            <span th:text="${datejour1}"></span>
+            <span th:text="${meteojour1}"></span>
+            <span th:text="${tempminjour1}"></span>
+            <span th:text="${tempmaxjour1}"></span>
+            <span th:text="${heuressoleiljour1}"></span>
+        </span>
+        <span>
+            <span th:text="${datejour2}"></span>
+            <span th:text="${meteojour2}"></span>
+            <span th:text="${tempminjour2}"></span>
+            <span th:text="${tempmaxjour2}"></span>
+            <span th:text="${heuressoleiljour2}"></span>
+        </span>
+        <span>
+            <span th:text="${datejour3}"></span>
+            <span th:text="${meteojour3}"></span>
+            <span th:text="${tempminjour3}"></span>
+            <span th:text="${tempmaxjour3}"></span>
+            <span th:text="${heuressoleiljour3}"></span>
+        </span>
+        <span>
+            <span th:text="${datejour4}"></span>
+            <span th:text="${meteojour4}"></span>
+            <span th:text="${tempminjour4}"></span>
+            <span th:text="${tempmaxjour4}"></span>
+            <span th:text="${heuressoleiljour4}"></span>
+        </span>
+    </div>
+</body>
+</html>
